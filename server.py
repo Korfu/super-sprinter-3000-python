@@ -8,13 +8,17 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/list')
 def route_list():
-    user_stories = data_handler.get_all_user_story()
+    user_stories = data_handler.get_all_user_stories()
 
     return render_template('list.html', user_stories=user_stories)
 
+@app.route('/add_story')
+def add_story():
+    pass
+
 if __name__ == '__main__':
     app.run(
-        host='0.0.0.0',
+        host='127.0.0.1',
         port=8000,
         debug=True,
     )
