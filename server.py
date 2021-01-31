@@ -12,9 +12,30 @@ def route_list():
 
     return render_template('list.html', user_stories=user_stories)
 
-@app.route('/add_story')
+@app.route('/add_story', methods=['GET','POST'])
 def add_story():
-    pass
+    if request.method == 'POST':
+        story = {
+            'title': request.form.get('title'),
+            'user_story': request.form.get('user_story'),
+            'acceptance_criteria': request.form.get('acceptance_criteria'),
+            'business_value': request.form.get('business_value'),
+            'estimation': request.form.get('estimation')
+        }
+
+        data_handler.add_user_story(story)
+        return redirect('/')
+
+    empty_user_story = {
+        'business_value': 500,
+        'estimation': 2
+    }
+
+    return render_template('user_story.html',
+                           story = empty_user_story,
+                           form_url = url_for('add_story'),
+                           page_title = "Add User Story",
+                           button_title = "Add new User Story")
 
 @app.route('/edit_story/<id>')
 def edit_story(id: int):
