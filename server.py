@@ -16,6 +16,10 @@ def route_list():
 def add_story():
     pass
 
+@app.route('/edit_story/<id>')
+def edit_story(id: int):
+    pass
+
 if __name__ == '__main__':
     app.run(
         host='127.0.0.1',

@@ -23,7 +23,7 @@ List of stories
         {% for story in user_stories %}
             <tr>
                 <td>{{ story['id'] }}</td>
-                <td>{{ story['title'] }}</td>
+                <td><a href="{{ url_for('edit_story', id=story['id']) }}"> {{ story['title'] }} </a></td>
                 <td>{{ story['acceptance_criteria'] }}</td>
                 <td>{{ story['business_value'] }}</td>
                 <td>{{ story['estimation'] }}</td>
