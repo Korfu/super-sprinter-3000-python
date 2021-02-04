@@ -16,4 +16,5 @@ So that I can keep them up-to-date with the current info.","When I open the webs
 And I click the title of a User Story,
 Then ensure I see a form prefilled with the details of the User Story,
 And when I submit the changed data, ensure it gets save,
-And ensure it overwrites the previous details, not creating a new User Story.",700,6,planning
+And ensure it overwrites the previous details, not creating a new User Story.",700,6,planning4,asdasd,asdas asdas d,dasdasad,500,2,todo
+4,dasdasdas,asdas,dasdasd,500,2,todo
