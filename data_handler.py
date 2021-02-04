@@ -19,8 +19,18 @@ def add_user_story(story):
         writer = csv.DictWriter(file, fieldnames=DATA_HEADER)
         writer.writerow(story)
 
+def update_user_story(story):
+    data = get_all_user_stories()
+    with open(DATA_FILE_PATH, 'w', newline='', encoding='utf-8') as file:
+        writer = csv.DictWriter(file, fieldnames=DATA_HEADER)
+        writer.writeheader()
+        for row in data:
+            if row['id'] == story['id']:
+                writer.writerow(story)
+            writer.writerow(row)
+
 def get_csv_data():
-    data = []
+    data =[]
     with open(DATA_FILE_PATH, encoding='utf-8') as file:
         reader = csv.DictReader(file)
         for row in reader:
