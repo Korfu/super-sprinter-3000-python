@@ -22,11 +22,11 @@ def add_user_story(story):
 def update_user_story(story):
     data = get_all_user_stories()
     with open(DATA_FILE_PATH, 'w', newline='', encoding='utf-8') as file:
-        writer = csv.DictWriter(file, fieldnames=DATA_HEADER)
+        writer = csv.DictWriter(file, fieldnames=DATA_HEADER, extrasaction='ignore')
         writer.writeheader()
         for row in data:
             if row['id'] == story['id']:
-                writer.writerow(story)
+                row = story
             writer.writerow(row)
 
 def get_csv_data():

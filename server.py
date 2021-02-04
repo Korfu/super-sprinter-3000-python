@@ -46,7 +46,8 @@ def edit_story(id: int):
             'user_story': request.form.get('user_story'),
             'acceptance_criteria': request.form.get('acceptance_criteria'),
             'business_value': request.form.get('business_value'),
-            'estimation': request.form.get('estimation')
+            'estimation': request.form.get('estimation'),
+            'status': request.form.get('status')
         }
 
         data_handler.update_user_story(story)
